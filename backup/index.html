@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Belajar Kuy Games</title>
+</head>
+<body>
+	<canvas id="mainCanvas" width="1366" height="768" style="border: 1px solid #000"></canvas>
+
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+<!-- // var MainScreen = new Phaser.Class({
+
+//     Extends: Phaser.Scene,
+
+//     initialize:
+
+//     function MainScreen(){
+//         Phaser.Scene.call(this, { key: "MainScreen"});
+//     },// axios.get('http://localhost:8000/soal')
+// .then( r => {
+//     soal = r.data.soal;
+// })
+// soal = [
+//   {
+//     "id": 1,
+//     "soal": "Soal 1",
+//     "jawaban": 1,
+//     "created_at": "2019-02-13 04:00:45",
+//     "updated_at": "2019-02-13 04:00:45"
+//   },
+//   {
+//     "id": 2,
+//     "soal": "Soal 2",
+//     "jawaban": 0,
+//     "created_at": "2019-02-13 04:00:43",
+//     "updated_at": "2019-02-13 04:00:43"
+//   },
+//   {
+//     "id": 3,
+//     "soal": "Soal 3",
+//     "jawaban": 1,
+//     "created_at": "2019-02-13 09:03:28",
+//     "updated_at": "2019-02-13 09:03:28"
+//   },
+//   {
+//     "id": 4,
+//     "soal": "Soal 4",
+//     "jawaban": 0,
+//     "created_at": "2019-02-13 09:03:29",
+//     "updated_at": "2019-02-13 09:03:29"
+//   }
+// ]
+/*
+
+var config = {
+    width: 800,
+    height: 600,
+    type: Phaser.WEBGL,
+    parent: 'phaser-example',
+    scene: {
+        create: create
+    }
+};
+
+var game = new Phaser.Game(config);
+
+function create ()
+{
+    var graphics = this.add.graphics();
+
+    graphics.lineStyle(4, 0xff00ff, 1);
+
+    //  Without this the arc will appear closed when stroked
+    graphics.beginPath();
+
+    // arc (x, y, radius, startAngle, endAngle, anticlockwise)
+    graphics.arc(400, 300, 200, Phaser.Math.DegToRad(90), Phaser.Math.DegToRad(180), true);
+
+    //  Uncomment this to close the path before stroking
+    // graphics.closePath();
+
+    graphics.strokePath();
+}
+
+
+count down timer
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
+
+===================
+var score = 0;
+var scoreText;
+
+scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+
+function collectStar (player, star)
+{
+    star.disableBody(true, true);
+
+    score += 10;
+    scoreText.setText('Score: ' + score);
+}
+
+var config = {
+    type: Phaser.AUTO,
+    parent: 'phaser-example',
+    width: 800,
+    height: 600,
+    scene: {
+        preload: preload,
+        create: create
+    }
+};
+
+var game = new Phaser.Game(config);
+
+function preload ()
+{
+    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+}
+
+function create ()
+{
+    var button = this.add.image(400, 300, 'logo').setInteractive();
+
+    button.on('pointerup', openExternalLink, this);
+}
+
+function openExternalLink ()
+{
+    var tweet = 'I am testing a button from within a Phaser example';
+
+    var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet);
+
+    var s = window.open(url, '_blank');
+
+    if (s && s.focus)
+    {
+        s.focus();
+    }
+    else if (!s)
+    {
+        window.location.href = url;
+    }
+}
+
+
+*/
+
+//     preload: function(){
+//         var btnTidak; 
+//         var btnYa;
+
+//         this.load.image('title', 'assets/img/title.png');
+//         this.load.image('footer', 'assets/img/footer.png');
+//         this.load.image('bg', 'assets/img/background.png');
+//         this.load.image('bgSoal', 'assets/img/bg-soal.png');
+//         this.load.image('btnYa', 'assets/img/btn-ya.png');
+//         this.load.image('btnTidak', 'assets/img/btn-tidak.png');
+//     },
+
+//     create: function(){
+//         this.add.image(config.width/2, config.height/2, 'bg');
+//         this.add.image(config.width/2, config.height - 100 ,'footer');
+
+//         this.add.image(config.width/2, config.height/2 - 50, 'bgSoal');
+
+//         // soalText = this.add.text(config.width/2 - 250, config.height/2, 'Phaser Text With Tint', { fontSize: '32px', fill: '#fff' });
+//         soalText = this.make.text({
+//             x: config.width/2,
+//             y: config.height/2 - 100,
+//             text: 'Contoh Soal',
+//             origin: { x: 0.5, y: 0.5 },
+//             style: {
+//                 font: 'bold 25px Arial',
+//                 fill: '#fff',
+//                 wordWrap: { width: 500 }
+//             }
+//         });
+
+//         btnYa = this.add.image(config.width/2 + 150, config.height/2 + 80, 'btnYa').setInteractive();
+//         btnTidak = this.add.image(config.width/2 - 150, config.height/2 + 80, 'btnTidak').setInteractive();
+
+//         btnYa.on('pointerover', function(event, gameObject) {
+//             // gameObject[0].setTint(0xff0000);
+//             btnYa.setAlpha(0.2);
+//         });
+
+//         btnYa.on('pointerout', function(event, gameObject){
+//             // gameObject[0].clearTint();
+//             btnYa.setAlpha(1);
+//         });
+
+//         btnTidak.on('pointerover', function(event, gameObject) {
+//             // gameObject[0].setTint(0xff0000);
+//             btnTidak.setAlpha(0.2);
+//         });
+
+//         btnTidak.on('pointerout', function(event, gameObject){
+//             // gameObject[0].clearTint();
+//             btnTidak.setAlpha(1);
+//         });
+
+//         btnYa.on('pointerup', function(event, gameObject){
+//             console.log(soal);
+//         });
+
+//         btnTidak.on('pointerup', function(event, gameObject){
+//             console.log(false);
+//         });
+//     },
+
+//     update: function() {
+//         // soalText.setText(soal[1].soal);
+//         if(this.input.activePointer.middleButton.isDown){
+//             alert('test');
+//         }
+//     }
+
+// })
+/*
+
+var SceneA = new Phaser.Class({
+
+    Extends: Phaser.Scene,
+
+    initialize:
+
+    function SceneA ()
+    {
+        Phaser.Scene.call(this, { key: 'sceneA' });
+    },
+
+    preload: function ()
+    {
+        this.load.image('face', 'assets/pics/bw-face.png');
+    },
+
+    create: function ()
+    {
+        this.add.sprite(400, 300, 'face').setAlpha(0.2);
+
+        this.input.once('pointerdown', function () {
+
+            console.log('From SceneA to SceneB');
+
+            this.scene.start('sceneB');
+
+        }, this);
+    }
+
+});
+
+
+
+var mainScreen = class mainScreen extends Phaser.Scene {
+
+    constructor(){
+        super({ key : 'mainScreen'});
+    }
+
+    preload ()
+    {
+        this.load.image('title', 'assets/img/title.png');
+        this.load.image('footer', 'assets/img/footer.png');
+        this.load.image('bg', 'assets/img/background.png');
+        this.load.image('bgSoal', 'assets/img/bg-soal.png');
+        this.load.image('btnYa', 'assets/img/btn-ya.png');
+        this.load.image('btnTidak', 'assets/img/btn-tidak.png');
+    }
+
+    create(){
+        this.add.image(config.width/2, config.height/2, 'bg');
+        this.add.image(config.width/2, config.height - 100 ,'footer');
+
+        this.add.image(config.width/2, config.height/2 - 50, 'bgSoal');
+
+        var btnYa = this.add.image(config.width/2 + 150, config.height/2 + 80, 'btnYa').setInteractive();
+        var btnTidak = this.add.image(config.width/2 - 150, config.height/2 + 80, 'btnTidak').setInteractive();
+
+        btnYa.on('pointerover', function(event, gameObject) {
+            // gameObject[0].setTint(0xff0000);
+            btnYa.setAlpha(0.2);
+        });
+
+        btnYa.on('pointerout', function(event, gameObject){
+            // gameObject[0].clearTint();
+            btnYa.setAlpha(1);
+        });
+
+        btnTidak.on('pointerover', function(event, gameObject) {
+            // gameObject[0].setTint(0xff0000);
+            btnTidak.setAlpha(0.2);
+        });
+
+        btnTidak.on('pointerout', function(event, gameObject){
+            // gameObject[0].clearTint();
+            btnTidak.setAlpha(1);
+        });
+
+        btnYa.on('pointerup', function(event, gameObject){
+            mainScreen.jawab(true);
+        });
+    }
+
+    update() {
+
+    }
+
+    jawab(jawaban){
+        alert(jawaban);
+    }
+}
+
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <div id="pesan"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            var url = "http://harviacode.com"; // url tujuan
+            var count = 10; // dalam detik
+            function countDown() {
+                if (count > 0) {
+                    count--;
+                    var waktu = count + 1;
+                    $('#pesan').html('Anda akan di redirect ke ' + url + ' dalam ' + waktu + ' detik.');
+                    setTimeout("countDown()", 1000);
+                } else {
+                    window.location.href = url;
+                }
+            }
+            countDown();
+        </script>
+    </body>
+</html>
+*/ -->

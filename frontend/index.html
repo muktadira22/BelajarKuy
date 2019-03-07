@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Soal Management</title>
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css.map">
+	<link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css">
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row" style="margin-top: 1%">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-body">
+						<form method="POST" id="f-soal">
+						  <div class="form-group">
+						    <label for="soal">Soal</label>
+						    <input type="text" class="form-control" id="soal" placeholder="Soal">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputFile">File input</label>
+						    <select class="form-control" name="jawaban">
+						    	<option disabled="">--</option>
+						    	<option value="1">YA</option>
+						    	<option value="0">TIDAK</option>
+						    </select>
+						  </div>
+						  <button type="submit" class="btn btn-default">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-body">
+						<table class="table table-hover table-stripped table-bordered" id="tbl-soal">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Soal</th>
+									<th>Jawban</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="assets/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+	<script type="text/javascript">
+		// $("#tbl-soal").DataTable();
+
+		$(function(){
+
+			$.getJSON('http://localhost:8000/soal', function(response) {
+				let i = 1;
+				let body = "";
+				$.each(response.soal, function(index, data){
+					body += "<tr>";
+					body += "<td>"+i+"</td>";
+					body += "<td>"+data.soal+"</td>";
+					body += "<td>"+(data.jawaban == 1 ? "YA" : "TIDAK")+"</td>";
+					body += "<td>";
+					body += "<button onclick='editSoal("+index+")' class='btn btn-warning'>Edit</button>";
+					body += "<button onclick='hapusSoal("+index+")' class='btn btn-danger'>Hapus</button>";
+					body += "</td>";
+					body += "</tr>";
+					i++;
+				});
+
+				$("#tbl-soal tbody").append(body);
+				$("#tbl-soal").DataTable();
+
+			});
+
+		});
+
+		function editSoal(index){
+		}
+
+		function hapusSoal(index){
+			alert(index);
+		}
+	</script>
+</body>
+</html>
