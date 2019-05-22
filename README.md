@@ -4,7 +4,7 @@ Open 'backend' folder and run this command
   <ul>
     <li># composer install</li> 
     <li># php -S localhost:8000 -t public</li>
-  <ul>
+  </ul>
 </p>
     
     <p>
